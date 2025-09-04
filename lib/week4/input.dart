@@ -31,9 +31,21 @@ class _InputDemoState extends State<InputDemo> {
 
         body: Column(
           children: [
-            TextField(controller: tcName,),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(
+                controller: tcName,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Enter your name',
+                  suffixIcon: IconButton(onPressed: tcName.clear , icon: Icon(Icons.clear)),
+                ),
+              ),
+            ),
+            // SizedBox(height: 20),
             ElevatedButton(onPressed: updateMessage, child: Text('OK')),
-            Text(message),
+            SizedBox(height: 20),
+            Text(message, style: TextStyle(fontSize: 30)),
           ],
         ),
       ),
