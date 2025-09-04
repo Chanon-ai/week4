@@ -9,13 +9,12 @@ class InputDemo extends StatefulWidget {
 
 class _InputDemoState extends State<InputDemo> {
   @override
-  int count = 0;
   String message = "";
+  TextEditingController tcName = TextEditingController();
 
-  void updateMessage(String str) {
-    // whenever user type something, update state variable
+  void updateMessage() {
     setState(() {
-      message = str;
+      message = tcName.text;
     });
   }
 
@@ -32,9 +31,8 @@ class _InputDemoState extends State<InputDemo> {
 
         body: Column(
           children: [
-            TextField(
-              onChanged: (String str) => updateMessage(str)
-            ),
+            TextField(controller: tcName,),
+            ElevatedButton(onPressed: updateMessage, child: Text('OK')),
             Text(message),
           ],
         ),
