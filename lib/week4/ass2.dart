@@ -21,7 +21,7 @@ class _CalculatorState extends State<Calculator> {
         result = "Please input both numbers";
       } else {
         int sum = num1 + num2;
-        result = "Result: $sum";
+        result = "Result = $sum";
       }
     });
   }
@@ -38,7 +38,7 @@ class _CalculatorState extends State<Calculator> {
         for (int i = 1; i < num2; i++) {
           pow *= num1;
         }
-        result = "Result: $pow";
+        result = "Result = $pow";
       }
     });
   }
