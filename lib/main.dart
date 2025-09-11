@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/week5/multi.dart';
-
-
+import 'package:flutter_application_1/week5/design2.dart';
 
 void main() {
-  runApp(MaterialApp(home: Multi(), debugShowCheckedModeBanner: false,));
+  runApp(MaterialApp(home: Design2(), debugShowCheckedModeBanner: false,));
 }
