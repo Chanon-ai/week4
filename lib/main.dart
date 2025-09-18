@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/week5/ass1.dart';
-import 'package:flutter_application_1/week5/ass2.dart';
-import 'package:flutter_application_1/week5/ass3.dart';
-import 'package:flutter_application_1/week5/design2.dart';
-import 'package:flutter_application_1/week5/random.dart';
+import 'package:flutter_application_1/week6/week6.dart';
+
 
 void main() {
-  runApp(MaterialApp(home: GuessGame(), debugShowCheckedModeBanner: false,));
+  runApp(MaterialApp(home: ButtonDemo(), debugShowCheckedModeBanner: false,));
 }
