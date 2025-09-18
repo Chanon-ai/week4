@@ -2,22 +2,27 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 
-class TimerDemo extends StatefulWidget {
-  const TimerDemo({super.key});
+class CountDown extends StatefulWidget {
+  const CountDown({super.key});
 
 
   @override
-  State<TimerDemo> createState() => _TimerDemoState();
+  State<CountDown> createState() => _CountDownState();
 }
 
 
-class _TimerDemoState extends State<TimerDemo> {
-  String status = 'Start';
+class _CountDownState extends State<CountDown> {
+  int count = 5;
 
 
-  void stop() {
+
+
+  void countdown(Timer timer) {
     setState(() {
-      status = 'Stop';
+      count--;
+      if (count == 0) {
+        timer.cancel();
+      }
     });
   }
 
@@ -25,9 +30,7 @@ class _TimerDemoState extends State<TimerDemo> {
   @override
   void initState() {
     super.initState();
-    // start timer
-    Timer(const Duration(seconds: 3), stop);
-    // Future.delayed(const Duration(seconds: 3), stop);
+    Timer.periodic(const Duration(seconds: 1), (timer) => countdown(timer));
   }
 
 
@@ -38,7 +41,7 @@ class _TimerDemoState extends State<TimerDemo> {
         child: Align(
           alignment: Alignment.topCenter,
           child: Text(
-            status,
+            count.toString(),
             style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
@@ -46,3 +49,4 @@ class _TimerDemoState extends State<TimerDemo> {
     );
   }
 }
+
