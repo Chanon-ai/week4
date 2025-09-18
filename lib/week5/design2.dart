@@ -11,6 +11,7 @@ class Design2 extends StatelessWidget {
         backgroundColor: Colors.black,
         centerTitle: true,
       ),
+      
       backgroundColor: Colors.grey[800],
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
