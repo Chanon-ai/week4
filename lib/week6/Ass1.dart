@@ -8,7 +8,8 @@ class SignIn extends StatefulWidget {
 }
 
 const Color bgColor = Color(0xFF202020);
-const Color Icon = Color.fromARGB(255, 240, 167, 32);
+const Color IconColor = Color.fromARGB(255, 207, 134, 66);
+const Color Icon2 = Color.fromARGB(255, 73, 73, 72);
 
 class _SignInState extends State<SignIn> {
   @override
@@ -22,7 +23,7 @@ class _SignInState extends State<SignIn> {
               Align(
                 alignment: Alignment.bottomCenter,
                 heightFactor: 0.45,
-                child: Image.asset('assets/img/baking.jpg'),
+                child: Image.asset('assets/images/baking.jpg'),
               ),
 
               Padding(
@@ -43,7 +44,7 @@ class _SignInState extends State<SignIn> {
                       padding: const EdgeInsets.only(top: 10, left: 100),
                       child: Text(
                         'SIGN UP',
-                        style: TextStyle(fontSize: 16, color: Icon),
+                        style: TextStyle(fontSize: 16, color: IconColor),
                       ),
                     ),
                   ],
@@ -58,7 +59,7 @@ class _SignInState extends State<SignIn> {
                       'https://icons.iconarchive.com/icons/icons8/windows-8/256/Users-Email-icon.png',
                       width: 20,
                       height: 20,
-                      color: Icon,
+                      color: IconColor,
                     ),
                     SizedBox(width: 10),
                     Expanded(
@@ -79,7 +80,7 @@ class _SignInState extends State<SignIn> {
                       'https://icons.iconarchive.com/icons/pictogrammers/material/256/lock-open-outline-icon.png',
                       width: 22,
                       height: 22,
-                      color: Icon,
+                      color: IconColor,
                     ),
                     SizedBox(width: 10),
                     Expanded(
@@ -92,8 +93,53 @@ class _SignInState extends State<SignIn> {
                   ],
                 ),
               ),
+              Spacer(),
 
-         
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  children: [
+                    Ink(
+                      decoration: const ShapeDecoration(
+                        shape: CircleBorder(side: BorderSide(color: Icon2)),
+                      ),
+                      child: IconButton(
+                        icon: const Icon(Icons.android),
+                        iconSize: 24,
+                        color: Icon2,
+                        onPressed: () {},
+                      ),
+                    ),
+
+                    SizedBox(width: 14),
+
+                    Ink(
+                      decoration: const ShapeDecoration(
+                        shape: CircleBorder(side: BorderSide(color: Icon2)),
+                      ),
+                      child: IconButton(
+                        icon: const Icon(Icons.message),
+                        iconSize: 24,
+                        color: Icon2,
+                        onPressed: () {},
+                      ),
+                    ),
+                    Spacer(),
+                    Ink(
+                      decoration: const ShapeDecoration(
+                        color: IconColor,
+                        shape: CircleBorder(side: BorderSide(color: IconColor)),
+                      ),
+                      child: IconButton(
+                        icon: const Icon(Icons.arrow_forward),
+                        iconSize: 26,
+                        color: bgColor,
+                        onPressed: () {},
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
