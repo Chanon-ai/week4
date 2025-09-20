@@ -55,12 +55,7 @@ class _SignInState extends State<SignIn> {
                 padding: const EdgeInsets.only(left: 20, top: 10),
                 child: Row(
                   children: [
-                    Image.network(
-                      'https://icons.iconarchive.com/icons/icons8/windows-8/256/Users-Email-icon.png',
-                      width: 20,
-                      height: 20,
-                      color: IconColor,
-                    ),
+                    Icon(Icons.alternate_email, size: 24, color: IconColor),
                     SizedBox(width: 10),
                     Expanded(
                       child: TextField(
@@ -76,12 +71,7 @@ class _SignInState extends State<SignIn> {
                 padding: const EdgeInsets.only(left: 20, top: 20),
                 child: Row(
                   children: [
-                    Image.network(
-                      'https://icons.iconarchive.com/icons/pictogrammers/material/256/lock-open-outline-icon.png',
-                      width: 22,
-                      height: 22,
-                      color: IconColor,
-                    ),
+                    Icon(Icons.lock_open, size: 24, color: IconColor),
                     SizedBox(width: 10),
                     Expanded(
                       child: TextField(
