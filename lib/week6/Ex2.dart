@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Papaya extends StatefulWidget {
-  const Papaya({super.key});
+class Papaya2 extends StatefulWidget {
+  const Papaya2({super.key});
 
   @override
-  State<Papaya> createState() => _PapayaState();
+  State<Papaya2> createState() => _Papaya2State();
 }
 
 const Color Bgcolor = Color.fromARGB(255, 52, 42, 197);
@@ -13,7 +13,7 @@ const Color icon2 = Color.fromARGB(255, 199, 49, 38);
 const Color icon3 = Color.fromARGB(255, 0, 0, 0);
 const String reviews = '3128 reviews';
 
-class _PapayaState extends State<Papaya> {
+class _Papaya2State extends State<Papaya2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,9 +45,8 @@ class _PapayaState extends State<Papaya> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Flexible(
-                      flex: 3,
-
+                    SizedBox(
+                      width: 120,
                       child: Container(
                         padding: const EdgeInsets.all(8.0),
                         decoration: BoxDecoration(
@@ -59,8 +58,8 @@ class _PapayaState extends State<Papaya> {
                       ),
                     ),
                     SizedBox(width: 14),
-                    Flexible(
-                      flex: 4,
+                    SizedBox(
+                      width: 200,
                       child: Column(
                         children: [
                           Image.asset('assets/images/salad.jpg'),
