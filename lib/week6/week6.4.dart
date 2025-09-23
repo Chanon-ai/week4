@@ -45,7 +45,8 @@ class _PapayaState extends State<Papaya> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Flexible(
+                    // Flexible(
+                    Expanded(
                       flex: 3,
 
                       child: Container(
@@ -59,7 +60,7 @@ class _PapayaState extends State<Papaya> {
                       ),
                     ),
                     SizedBox(width: 14),
-                    Flexible(
+                    Expanded(
                       flex: 4,
                       child: Column(
                         children: [
