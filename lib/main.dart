@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/week6/Ex8.dart';
+import 'fishing6631501029.dart';
 
 void main() {
-  runApp(MaterialApp(home: RandomCard(), debugShowCheckedModeBanner: false));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Fishing()));
 }

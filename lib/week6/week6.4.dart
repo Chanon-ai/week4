@@ -64,7 +64,14 @@ class _PapayaState extends State<Papaya> {
                       flex: 4,
                       child: Column(
                         children: [
-                          Image.asset('assets/images/salad.jpg'),
+                          ClipOval(
+                            child: Image.asset(
+                              'assets/images/salad.jpg',
+                              width: 160,
+                              height: 160,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                           Padding(
                             padding: const EdgeInsets.only(top: 10),
                             child: Row(
@@ -101,7 +108,7 @@ class _PapayaState extends State<Papaya> {
                               ),
                               Column(
                                 children: [
-                                  Icon(Icons.timelapse, color: icon2),
+                                  Icon(Icons.timer, color: icon2),
                                   Text('COOK:', style: TextStyle(color: icon2)),
                                   Text(
                                     '10 mins',
@@ -114,7 +121,7 @@ class _PapayaState extends State<Papaya> {
                               ),
                               Column(
                                 children: [
-                                  Icon(Icons.timelapse, color: icon3),
+                                  Icon(Icons.fastfood_outlined, color: icon3),
                                   Text(
                                     'FEEDS:',
                                     style: TextStyle(color: icon3),

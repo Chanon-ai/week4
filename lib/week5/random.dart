@@ -58,7 +58,8 @@ class _RandomDemoState extends State<RandomDemo> {
                  int num = min + Random().nextInt(max - min + 1);
                  setState(() {
                    result = num.toString();
-                 });
+                 }
+                 );
                },
                child: const Text('Generate'),
              ),
