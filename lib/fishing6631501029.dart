@@ -36,23 +36,14 @@ class _FishingState extends State<Fishing> {
   int worms = 5;
 
   void goFishing() {
-    if (worms <= 0) {
-      setState(() {
-        result = 'No more worms!';
-      });
-      return;
-    }
-
     setState(() {
       int index = Random().nextInt(fish.length);
       img = fish[index]['image'];
-      int num = 1 + Random().nextInt(5); 
+      int num = 1 + Random().nextInt(5);
       worms -= 1;
-
       int total = fish[index]['price'] * num;
       coin += total;
-
-      result = '${fish[index]['name']} x$num = +$total coins';
+      result = '${fish[index]['name']} x $num = $total coins';
     });
   }
 
@@ -113,7 +104,9 @@ class _FishingState extends State<Fishing> {
                 Text(result),
                 SizedBox(height: 10),
                 ElevatedButton(
-                  onPressed: goFishing,
+                  onPressed: worms > 0
+                      ? goFishing
+                      : null,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     foregroundColor: Colors.white,
@@ -121,6 +114,7 @@ class _FishingState extends State<Fishing> {
                   ),
                   child: Text('Fishing'),
                 ),
+
                 SizedBox(height: 5),
                 ElevatedButton(
                   onPressed: resetGame,

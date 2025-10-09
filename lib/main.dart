@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'fishing6631501029.dart';
+import 'package:flutter_application_1/week7/Ex5.dart';
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Fishing()));
+  runApp(
+    MaterialApp(debugShowCheckedModeBanner: false, home: 
+    AlertDialogDemo()
+    ),
+  );
 }
