@@ -11,39 +11,47 @@ class _DateDemoState extends State<DateDemo> {
   String from = '';
   String to = '';
   DateTime? fromDate;
+  DateTime? toDate;
 
   void selectDate() async {
+    DateTime now = DateTime.now();
     DateTime? dt = await showDatePicker(
       context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(DateTime.now().year, 1, 1),
-      lastDate: DateTime(DateTime.now().year, 12, 31),
+      initialDate: fromDate ?? now,
+      firstDate: DateTime(now.year, 1, 1),
+      lastDate: DateTime(now.year, 12, 31),
     );
 
     if (dt != null) {
       setState(() {
         fromDate = dt;
         from = '${dt.day}/${dt.month}/${dt.year}';
-        
+        if (toDate == null) {
+          toDate = dt;
+          to = from;
+        } else {
+          if (dt.isAfter(toDate!)) {
+            toDate = dt;
+            to = from;
+          }
+        }
       });
     }
   }
 
   void selectDate2() async {
+    if (fromDate == null) return;
     DateTime? dt = await showDatePicker(
       context: context,
-      initialDate: fromDate!,
+      initialDate: toDate ?? fromDate!,
       firstDate: fromDate!,
       lastDate: DateTime(DateTime.now().year, 12, 31),
     );
 
     if (dt != null) {
       setState(() {
-        if (dt.isBefore(fromDate!)) {
-          to = from;
-        } else {
-          to = '${dt.day}/${dt.month}/${dt.year}';
-        }
+        toDate = dt;
+        to = '${dt.day}/${dt.month}/${dt.year}';
       });
     }
   }
@@ -53,8 +61,9 @@ class _DateDemoState extends State<DateDemo> {
     return Scaffold(
       appBar: AppBar(title: const Text('DatePicker Demo')),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -67,7 +76,7 @@ class _DateDemoState extends State<DateDemo> {
                 Text(from),
               ],
             ),
-            const SizedBox(height: 16),
+      
             Row(
               children: [
                 FilledButton.icon(
