@@ -31,7 +31,7 @@ class _CoffeeApp2State extends State<CoffeeApp2> {
       'name': 'Cappuccino',
       'price': 40,
       'image':
-          'https://i.pinimg.com/736x/f0/65/5f/f0655f2737da76be9b4ac435c65e3d9b.jpg',
+          'https://i.pinimg.com/736x/7f/c6/3b/7fc63bbcd2d31c777e00cf7ab5a20024.jpg',
     },
   ];
 
